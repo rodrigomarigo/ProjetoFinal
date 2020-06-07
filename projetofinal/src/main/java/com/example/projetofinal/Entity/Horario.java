@@ -3,17 +3,27 @@ package com.example.projetofinal.Entity;
 import java.sql.Time;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.springframework.lang.NonNull;
+
 @Entity
 public class Horario {
+    @Id
+    @NonNull
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
 
     private Procedimento procedimento;
@@ -22,6 +32,7 @@ public class Horario {
     @JoinColumn(name = "id_salao")
     private Salao salao;
 
+    @NonNull
     private Time horario;
 
 

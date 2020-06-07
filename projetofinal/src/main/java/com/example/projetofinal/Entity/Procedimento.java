@@ -2,15 +2,37 @@ package com.example.projetofinal.Entity;
 
 import java.util.List;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.UniqueConstraint;
+import javax.persistence.JoinColumn;
+
+import org.springframework.lang.NonNull;
+
 public class Procedimento {
+    @Id
+    @NonNull
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
+    @NonNull
     private String nome;
 
     //armazena lista de funcionarios que realizam esse procedimento
+    @ManyToMany
+    @JoinTable(
+        name = "FuncionarioProcedimento",
+        uniqueConstraints = @UniqueConstraint (columnNames = { "id_funcionario", "id_procedimento" }),
+        joinColumns        = @JoinColumn(name = "id_procedimento"), 
+        inverseJoinColumns = @JoinColumn(name = "id_funcionario")
+    )
     private List<Funcionario> funcionarios;
 
     //em minutos
+    @NonNull
     private int duracao;
 
 

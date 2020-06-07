@@ -4,12 +4,23 @@ import java.util.List;
 
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.UniqueConstraint;
+
+import org.springframework.lang.NonNull;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
 public class Funcionario {
+    @Id
+    @NonNull
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     
+    @NonNull
     private String nome;
 
     @ManyToMany
@@ -21,9 +32,18 @@ public class Funcionario {
     )
     private List<Salao> saloes;
 
+    @ManyToMany
+    @JoinTable(
+        name = "FuncionarioProcedimento",
+        uniqueConstraints = @UniqueConstraint (columnNames = { "id_funcionario", "id_procedimento" }),
+        joinColumns        = @JoinColumn(name = "id_funcionario"), 
+        inverseJoinColumns = @JoinColumn(name = "id_procedimento")
+    )
     private List<Procedimento> procedimentosRealizaveis;
 
     //horarios marcados
+    @OneToMany
+    @JoinColumn(name = "id_funcionario")
     private List<Horario> horarios;
 
 
