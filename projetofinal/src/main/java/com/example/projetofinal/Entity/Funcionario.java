@@ -7,7 +7,7 @@ public class Funcionario {
     
     private String nome;
 
-    private Salao salao;
+    private List<Salao> saloes;
 
     private List<Procedimento> procedimentosRealizaveis;
 
@@ -31,13 +31,15 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public Salao getSalao() {
-        return this.salao;
+
+    public List<Salao> getSaloes() {
+        return this.saloes;
     }
 
-    public void setSalao(Salao salao) {
-        this.salao = salao;
+    public void setSaloes(List<Salao> saloes) {
+        this.saloes = saloes;
     }
+    
 
     public List<Procedimento> getProcedimentosRealizaveis() {
         return this.procedimentosRealizaveis;
@@ -61,11 +63,12 @@ public class Funcionario {
         return "{" +
             " id='" + getId() + "'" +
             ", nome='" + getNome() + "'" +
-            ", salao='" + getSalao() + "'" +
+            ", saloes='" + getSaloes() + "'" +
             ", procedimentosRealizaveis='" + getProcedimentosRealizaveis() + "'" +
             ", horarios='" + getHorarios() + "'" +
             "}";
     }
+    
 
 
 }
