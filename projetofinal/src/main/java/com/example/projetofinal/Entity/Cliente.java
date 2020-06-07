@@ -3,13 +3,27 @@ package com.example.projetofinal.Entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Cliente {
+
+    @Id
+    @NonNull
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int Id;
 
+    @NonNull
     private String nome;
 
+    @OneToMany
+    @JoinColumn(name = "id_cliente")
     private List<Horario> horarios;
 
 
@@ -36,7 +50,6 @@ public class Cliente {
     public void setHorarios(List<Horario> horarios) {
         this.horarios = horarios;
     }
-
 
     @Override
     public String toString() {

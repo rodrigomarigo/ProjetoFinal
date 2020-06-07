@@ -3,11 +3,15 @@ package com.example.projetofinal.Entity;
 import java.sql.Time;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Horario {
     private int id;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
     private Funcionario funcionario;
@@ -66,8 +70,6 @@ public class Horario {
     public void setHorario(Time horario) {
         this.horario = horario;
     }
-
-
 
     @Override
     public String toString() {
