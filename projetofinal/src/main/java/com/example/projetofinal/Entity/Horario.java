@@ -2,12 +2,15 @@ package com.example.projetofinal.Entity;
 
 import java.sql.Time;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.lang.NonNull;
 
@@ -33,8 +36,9 @@ public class Horario {
     private Salao salao;
 
     @NonNull
+    @Basic
+    @Temporal(TemporalType.TIME)
     private Time horario;
-
 
     public int getId() {
         return this.id;
