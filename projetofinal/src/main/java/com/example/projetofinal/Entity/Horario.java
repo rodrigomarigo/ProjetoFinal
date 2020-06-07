@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.io.Serializable;
 import java.sql.Time;
 
 import javax.persistence.Basic;
@@ -15,7 +16,9 @@ import javax.persistence.TemporalType;
 import org.springframework.lang.NonNull;
 
 @Entity
-public class Horario {
+public class Horario implements Serializable{
+    private static final long serialVersionUID = 1L;
+    
     @Id
     @NonNull
     @GeneratedValue(strategy=GenerationType.AUTO)

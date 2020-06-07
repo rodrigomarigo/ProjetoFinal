@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,9 @@ import javax.persistence.UniqueConstraint;
 
 import org.springframework.lang.NonNull;
 
-public class Salao {
+public class Salao implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     @Id
     @NonNull
     @GeneratedValue(strategy=GenerationType.AUTO)

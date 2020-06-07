@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.JoinTable;
@@ -14,7 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-public class Funcionario {
+public class Funcionario implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @NonNull
     @GeneratedValue(strategy=GenerationType.AUTO)

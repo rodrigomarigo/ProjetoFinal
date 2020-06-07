@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,9 @@ import javax.persistence.JoinColumn;
 
 import org.springframework.lang.NonNull;
 
-public class Procedimento {
+public class Procedimento implements Serializable{
+    private static final long serialVersionUID = 1L;
+
     @Id
     @NonNull
     @GeneratedValue(strategy=GenerationType.AUTO)

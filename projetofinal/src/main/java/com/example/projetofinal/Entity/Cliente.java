@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,7 +13,8 @@ import javax.persistence.OneToMany;
 import org.springframework.lang.NonNull;
 
 @Entity
-public class Cliente {
+public class Cliente implements Serializable{
+    private static final long serialVersionUID = 1L;
 
     @Id
     @NonNull
