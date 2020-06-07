@@ -1,8 +1,9 @@
 package com.example.projetofinal.Entity;
 
-import javax.persistence.Entity;
+import java.sql.Time;
+import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import javax.persistence.Entity;
 
 @Entity
 public class Cliente {
@@ -10,6 +11,6 @@ public class Cliente {
 
     private String nome;
 
-    // private List<datetime> horarios;
+    private List<Time> horarios;
 
 }

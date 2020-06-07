@@ -1,5 +1,6 @@
 package com.example.projetofinal.Entity;
 
+import java.sql.Time;
 import java.util.List;
 
 public class Funcionario {
@@ -10,4 +11,7 @@ public class Funcionario {
     private Salao salao;
 
     private List<Procedimento> procedimentos;
+
+    //horarios marcados
+    private List<Time> horarios;
 }

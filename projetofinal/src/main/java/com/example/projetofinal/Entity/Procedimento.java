@@ -9,4 +9,7 @@ public class Procedimento {
 
     //armazena lista de funcionarios que realizam esse procedimento
     private List<Funcionario> funcionarios;
+
+    //em minutos
+    private int duracao;
 }
