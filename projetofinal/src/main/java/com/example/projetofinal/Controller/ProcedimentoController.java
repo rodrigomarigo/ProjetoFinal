@@ -6,6 +6,8 @@ import com.example.projetofinal.Service.ProcedimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -22,5 +24,12 @@ public class ProcedimentoController {
 
         return mv;
 
+    }
+
+    @PostMapping("/salvarProcedimento")
+    public String salvar(@ModelAttribute Procedimento procedimento){
+        procedimentoService.salvar(procedimento);
+
+        return "redirect:/procedimentos";
     }
 }

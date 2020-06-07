@@ -16,4 +16,8 @@ public class ProcedimentoService {
     public List<Procedimento> getProcedimentos(){
         return repository.findAll();
     }
+
+    public void salvar(Procedimento procedimento){
+        repository.save(procedimento);
+    }
 }

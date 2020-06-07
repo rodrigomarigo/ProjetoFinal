@@ -17,6 +17,38 @@
     <br>
     <br>
 
+    <!-- Formulário para cadastrar novo cliente -->
+    <h2>Novo Procedimento</h2>
+    <form th:action="@{/salvarProcedimento}" th:object="${procedimento}" method="POST">
+        <label>Nome: </label>
+        <input type="text" placeholder="Digite o nome" name="nome" required/>
+
+        <!-- <label>Autor Principal: </label>
+        <select th:field="${livro.autor}" required>
+            <option value="">Escolha o autor</option>
+            <option th:each="autor : ${autores}"
+                        th:value="${autor.id}"
+                        th:text="${autor.nome}">
+            </option>
+        </select>
+
+        <label>Editora: </label>
+        <select th:field="${livro.editora}" required>
+            <option value="">Escolha a editora</option>
+            <option th:each="editora : ${editoras}"
+                        th:value="${editora.id}"
+                        th:text="${editora.nome}">
+            </option>
+        </select> -->
+
+        <input type="submit" value="Salvar" />
+
+    </form>
+
+    <br>
+    <br>
+
+    <h2>Procedimentos Cadastrados</h2>
     <table>
         <tr>
             <th>Id Procedimento</th>
