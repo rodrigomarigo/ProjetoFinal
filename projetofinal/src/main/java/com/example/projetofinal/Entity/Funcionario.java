@@ -2,11 +2,23 @@ package com.example.projetofinal.Entity;
 
 import java.util.List;
 
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.UniqueConstraint;
+import javax.persistence.JoinColumn;
+
 public class Funcionario {
     private int id;
     
     private String nome;
 
+    @ManyToMany
+    @JoinTable(
+        name = "SalaoFuncionario",
+        uniqueConstraints = @UniqueConstraint (columnNames = { "id_salao", "id_funcionario" }),
+        joinColumns        = @JoinColumn(name = "id_funcionario"), 
+        inverseJoinColumns = @JoinColumn(name = "id_salao")
+    )
     private List<Salao> saloes;
 
     private List<Procedimento> procedimentosRealizaveis;
@@ -31,7 +43,6 @@ public class Funcionario {
         this.nome = nome;
     }
 
-
     public List<Salao> getSaloes() {
         return this.saloes;
     }
@@ -40,7 +51,6 @@ public class Funcionario {
         this.saloes = saloes;
     }
     
-
     public List<Procedimento> getProcedimentosRealizaveis() {
         return this.procedimentosRealizaveis;
     }

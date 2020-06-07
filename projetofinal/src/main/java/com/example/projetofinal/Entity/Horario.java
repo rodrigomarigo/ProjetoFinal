@@ -18,6 +18,8 @@ public class Horario {
 
     private Procedimento procedimento;
 
+    @ManyToOne
+    @JoinColumn(name = "id_salao")
     private Salao salao;
 
     private Time horario;
