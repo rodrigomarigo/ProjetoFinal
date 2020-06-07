@@ -10,7 +10,7 @@ public class Funcionario {
 
     private Salao salao;
 
-    private List<Procedimento> procedimentos;
+    private List<Procedimento> procedimentosRealizaveis;
 
     //horarios marcados
     private List<Time> horarios;
