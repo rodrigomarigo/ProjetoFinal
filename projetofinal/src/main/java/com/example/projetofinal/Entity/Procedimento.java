@@ -12,4 +12,49 @@ public class Procedimento {
 
     //em minutos
     private int duracao;
+
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return this.funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public int getDuracao() {
+        return this.duracao;
+    }
+
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", nome='" + getNome() + "'" +
+            ", funcionarios='" + getFuncionarios() + "'" +
+            ", duracao='" + getDuracao() + "'" +
+            "}";
+    }
+
 }
