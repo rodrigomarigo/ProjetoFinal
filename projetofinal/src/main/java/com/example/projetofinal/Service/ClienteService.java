@@ -16,4 +16,8 @@ public class ClienteService {
     public List<Cliente> getClientes(){
         return repository.findAll();
     }
+
+    public void salvar(Cliente cliente){
+        repository.save(cliente);
+    }
 }
