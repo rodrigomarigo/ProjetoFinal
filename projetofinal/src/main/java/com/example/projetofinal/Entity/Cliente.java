@@ -1,6 +1,5 @@
 package com.example.projetofinal.Entity;
 
-import java.sql.Time;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -11,6 +10,6 @@ public class Cliente {
 
     private String nome;
 
-    private List<Time> horarios;
+    private List<Horario> horarios;
 
 }
