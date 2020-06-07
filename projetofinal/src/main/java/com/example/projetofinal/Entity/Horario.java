@@ -2,8 +2,10 @@ package com.example.projetofinal.Entity;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.time.LocalDate;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,20 +30,16 @@ public class Horario implements Serializable{
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario")
+    @NonNull
     private Funcionario funcionario;
 
+    @NonNull
     private Procedimento procedimento;
 
-    @ManyToOne
-    @JoinColumn(name = "id_salao")
-    private Salao salao;
-
-    @NonNull
-    @Basic
-    @Temporal(TemporalType.TIME)
-    private Time horario;
+    // @NonNull
+    // @Basic
+    // @Column(name = "horario", columnDefinition = "DATE")
+    // private LocalDate horario;
 
     public int getId() {
         return this.id;
@@ -75,21 +73,13 @@ public class Horario implements Serializable{
         this.procedimento = procedimento;
     }
 
-    public Salao getSalao() {
-        return this.salao;
-    }
+    // public LocalDate getHorario() {
+    //     return this.horario;
+    // }
 
-    public void setSalao(Salao salao) {
-        this.salao = salao;
-    }
-
-    public Time getHorario() {
-        return this.horario;
-    }
-
-    public void setHorario(Time horario) {
-        this.horario = horario;
-    }
+    // public void setHorario(LocalDate horario) {
+    //     this.horario = horario;
+    // }
 
     @Override
     public String toString() {
@@ -98,8 +88,7 @@ public class Horario implements Serializable{
             ", cliente='" + getCliente() + "'" +
             ", funcionario='" + getFuncionario() + "'" +
             ", procedimento='" + getProcedimento() + "'" +
-            ", salao='" + getSalao() + "'" +
-            ", horario='" + getHorario() + "'" +
+            // ", horario='" + getHorario() + "'" +
             "}";
     }
 
