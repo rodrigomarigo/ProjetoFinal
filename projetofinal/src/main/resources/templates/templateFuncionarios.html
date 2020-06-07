@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionario</title>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Funcionário/ Funcionários Cadastrados</h1>    
+    <a href="/">Menu</a>
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <th>Id Funcionário</th>
+            <th>Nome Funcionário</th>
+            <!-- <th>Remover</th>
+            <th>Editar</th>
+            <th>Detalhes</th> -->
+
+            <tr th:each="funcionario : ${funcionarios}">
+                <td th:text="${funcionario.id}"></td>
+                <td th:text="${funcionario.nome}"></td>
+                <!-- <td> <a th:href="@{'/removerLivro?idlivro=' + ${livro.id}}">Remover</a></td> 
+                <td> <a th:href="@{'/editarLivro?id=' + ${livro.id}}">Editar</a></td>  
+                <td> <a th:href="@{'/detalhesLivro/' + ${livro.id}}">Detalhes</a></td> -->
+                
+            </tr>
+        </tr>
+    </table>
+    
+</body>
+</html>
