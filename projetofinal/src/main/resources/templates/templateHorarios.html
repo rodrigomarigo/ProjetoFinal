@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procedimentos</title>
+    <title>Horarios Cadastrados/ Cadastro de Horario</title>
 
     <style>
         table, th, td {
@@ -12,16 +12,15 @@
     </style>
 </head>
 <body>
-    <h1>Cadastro de Procedimento/ Procedimentos Cadastrados</h1>    
+    <h1>Cadastro de Horário/ Horários Cadastrados</h1>    
     <a href="/">Menu</a>
     <br>
     <br>
-
-    <!-- Formulário para cadastrar novo cliente -->
-    <h2>Novo Procedimento</h2>
-    <form th:action="@{/salvarProcedimento}" th:object="${procedimento}" method="POST">
-        <label>Nome: </label>
-        <input type="text" placeholder="Digite o nome" name="nome" required/>
+    <!-- Formulário para cadastrar novo horário -->
+    <h2>Novo Horário</h2>
+    <form th:action="@{/salvarHorario}" th:object="${horario}" method="POST">
+        <!-- <label>Nome: </label>
+        <input type="text" placeholder="Digite o nome" name="nome" required/> -->
 
         <!-- <label>Autor Principal: </label>
         <select th:field="${livro.autor}" required>
@@ -42,31 +41,27 @@
         </select> -->
 
         <input type="submit" value="Salvar" />
-
     </form>
 
-    <br>
-    <br>
-
-    <h2>Procedimentos Cadastrados</h2>
+    <h2> Horarios</h2>
     <table>
         <tr>
-            <th>Id Procedimento</th>
-            <th>Nome Procedimento</th>
+            <th>Id Horario</th>
+            <!-- <th>Nome Cliente</th> -->
             <!-- <th>Remover</th>
             <th>Editar</th> -->
             <th>Detalhes</th>
 
-            <tr th:each="procedimento : ${procedimentos}">
-                <td th:text="${procedimento.id}"></td>
-                <td th:text="${procedimento.nome}"></td>
+            <tr th:each="horario : ${horarios}">
+                <td th:text="${horario.id}"></td>
+                <!-- <td th:text="${cliente.nome}"></td> -->
                 <!-- <td> <a th:href="@{'/removerLivro?idlivro=' + ${livro.id}}">Remover</a></td> 
                 <td> <a th:href="@{'/editarLivro?id=' + ${livro.id}}">Editar</a></td>   -->
-                <td> <a th:href="@{'/detalhesProcedimentos/' + ${procedimento.id}}">Detalhes</a></td>
+                <td> <a th:href="@{'/detalhesHorario/' + ${horario.id}}">Detalhes</a></td>
                 
             </tr>
         </tr>
     </table>
-    
+
 </body>
 </html>

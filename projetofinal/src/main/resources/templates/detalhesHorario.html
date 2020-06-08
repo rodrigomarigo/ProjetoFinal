@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Horário</title>
+
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalhes Horário</h1>
+    <a href="/">Menu</a>
+    <a href="/horarios">Horarios</a>
+
+    <br>
+    <br>
+    
+    <b>Id Horário: </b> <span th:text="${horario.id}"></span>
+    <!-- <br><b>Nome: </b> <span th:text="${cliente.nome}"></span> -->
+    <!-- <br><b>Editoras: </b> <a th:href="@{'/detalhesEditora/' + ${livro.editora?.id}}" ><span th:text="${livro.editora?.nome}"></span></a></span> -->
+    <br>
+    <br>
+
+
+</body>
+</html>
