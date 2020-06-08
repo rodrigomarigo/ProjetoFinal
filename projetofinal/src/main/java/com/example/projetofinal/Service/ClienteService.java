@@ -20,4 +20,8 @@ public class ClienteService {
     public void salvar(Cliente cliente){
         repository.save(cliente);
     }
+
+    public Cliente getClienteById(int id){
+        return repository.findById(id).get();
+    }
 }

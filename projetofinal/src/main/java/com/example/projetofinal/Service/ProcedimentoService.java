@@ -20,4 +20,8 @@ public class ProcedimentoService {
     public void salvar(Procedimento procedimento){
         repository.save(procedimento);
     }
+
+    public Procedimento getProcedimentoById(int id){
+        return repository.findById(id).get();
+    }
 }

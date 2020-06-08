@@ -20,4 +20,8 @@ public class FuncionarioService {
     public void salvar(Funcionario funcionario){
         repository.save(funcionario);
     }
+
+    public Funcionario getFuncionarioById(int id){
+        return repository.findById(id).get();
+    }
 }
