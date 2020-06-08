@@ -17,4 +17,12 @@ public class HorarioService {
         return repository.findAll();
     }
     
+    public void salvar(Horario horario){
+        repository.save(horario);
+    }
+
+    public Horario getHorarioById(int id){
+        return repository.findById(id).get();
+    }
+
 }
