@@ -26,5 +26,41 @@
     <br>
 
 
+    <form th:action="@{/associarHorarioCliente(idHorario=${horario.id})}" method="POST">
+        <label><b>Clientes:</b></label>
+        <select name="id" required>
+            <option value="">Escolha o cliente</option>
+            <option th:each="cliente : ${clientes}"
+                        th:value="${cliente.id}"
+                        th:text="${cliente.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Associar Cliente" />
+    </form>
+
+    <form th:action="@{/associarHorarioFuncionario(idHorario=${horario.id})}" method="POST">
+        <label><b>Funcionarios:</b></label>
+        <select name="id" required>
+            <option value="">Escolha o funcionario</option>
+            <option th:each="funcionario : ${funcionarios}"
+                        th:value="${funcionario.id}"
+                        th:text="${funcionario.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Associar Funcionário" />
+    </form>
+
+    <form th:action="@{/associarHorarioProcedimento(idHorario=${horario.id})}" method="POST">
+        <label><b>Procedimento:</b></label>
+        <select name="id" required>
+            <option value="">Escolha o procedimento</option>
+            <option th:each="procedimento : ${procedimentos}"
+                        th:value="${procedimento.id}"
+                        th:text="${procedimento.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Associar Procedimento" />
+    </form>
+
 </body>
 </html>
